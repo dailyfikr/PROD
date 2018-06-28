@@ -1137,9 +1137,9 @@ $.extend(MapsLib, {
 			console.log('clause  is '+addlClause);
 			whereClause += addlClause;
 		}
-		var tsh=decodeURIComponent($.urlParam('T'));		
-		if (tsh!="null"){
-			console.log('Tashkeel request  is '+tsh); 
+		var sts=decodeURIComponent($.urlParam('S'));			
+		if (sts!="null"){
+			console.log('Status request  is '+sts); 
 			if (sts =="S"){
 				addlClause =" AND  Status CONTAINS 'Student' ";
 			}
