@@ -1137,9 +1137,9 @@ $.extend(MapsLib, {
 			console.log('clause  is '+addlClause);
 			whereClause += addlClause;
 		}
-		var sts=decodeURIComponent($.urlParam('S'));		
-		if (sts!="null"){
-			console.log('Status request  is '+sts); 
+		var tsh=decodeURIComponent($.urlParam('T'));		
+		if (tsh!="null"){
+			console.log('Tashkeel request  is '+tsh); 
 			if (sts =="S"){
 				addlClause =" AND  Status CONTAINS 'Student' ";
 			}
@@ -1154,7 +1154,16 @@ $.extend(MapsLib, {
 			}
 			console.log('clause  is '+addlClause);
 			whereClause += addlClause;
-		}			
+		}	    
+		var tash=decodeURIComponent($.urlParam('T'));
+		console.log('Tashkeel '+tash);
+		if (tash!="null"){			
+			var temp=tash.replace("=="," AND Tashkeel = ");			
+			var addlClause=temp.replace("!="," AND Tashkeel NOT EQUAL TO ");	
+			console.log('clause  is '+addlClause);
+			whereClause += addlClause;
+		}
+					
 		console.log('add additional clause here');
 		console.log(whereClauses);
         if (MapsLib.customSearchFilter.length > 0)
